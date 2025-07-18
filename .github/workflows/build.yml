@@ -23,9 +23,9 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build
-        run: ./mvnw -T1C clean install
+        run: mvn -T1C clean install
       - name: Publish Maven artifacts
-        run: ./mvnw deploy --settings .github/settings.xml
+        run: mvn deploy --settings .github/settings.xml
         if: contains(github.ref, 'release') || contains(github.ref, 'development')
         env:
           GITHUB_ACTOR: ${{ github.actor }}
