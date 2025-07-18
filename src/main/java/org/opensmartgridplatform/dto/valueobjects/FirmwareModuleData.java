@@ -1,0 +1,86 @@
+// SPDX-FileCopyrightText: Copyright Contributors to the GXF project
+//
+// SPDX-License-Identifier: Apache-2.0
+
+package org.opensmartgridplatform.dto.valueobjects;
+
+import java.io.Serializable;
+
+public class FirmwareModuleData implements Serializable {
+
+  /** Serial Version UID. */
+  private static final long serialVersionUID = -2914554640938849434L;
+
+  private final String moduleVersionComm;
+  private final String moduleVersionFunc;
+  private final String moduleVersionMa;
+  private final String moduleVersionMbus;
+  private final String moduleVersionSec;
+  private final String moduleVersionMBusDriverActive;
+
+  public FirmwareModuleData(
+      final String moduleVersionComm,
+      final String moduleVersionFunc,
+      final String moduleVersionMa,
+      final String moduleVersionMbus,
+      final String moduleVersionSec,
+      final String moduleVersionMBusDriverActive) {
+    this.moduleVersionComm = moduleVersionComm;
+    this.moduleVersionFunc = moduleVersionFunc;
+    this.moduleVersionMa = moduleVersionMa;
+    this.moduleVersionMbus = moduleVersionMbus;
+    this.moduleVersionSec = moduleVersionSec;
+    this.moduleVersionMBusDriverActive = moduleVersionMBusDriverActive;
+  }
+
+  public String getModuleVersionComm() {
+    return this.moduleVersionComm;
+  }
+
+  public String getModuleVersionFunc() {
+    return this.moduleVersionFunc;
+  }
+
+  public String getModuleVersionMa() {
+    return this.moduleVersionMa;
+  }
+
+  public String getModuleVersionMbus() {
+    return this.moduleVersionMbus;
+  }
+
+  public String getModuleVersionSec() {
+    return this.moduleVersionSec;
+  }
+
+  public String getModuleVersionMBusDriverActive() {
+    return this.moduleVersionMBusDriverActive;
+  }
+
+  public int countNumberOfModules() {
+    int count = 0;
+    if (isNotEmpty(this.moduleVersionComm)) {
+      count++;
+    }
+    if (isNotEmpty(this.moduleVersionFunc)) {
+      count++;
+    }
+    if (isNotEmpty(this.moduleVersionMa)) {
+      count++;
+    }
+    if (isNotEmpty(this.moduleVersionMbus)) {
+      count++;
+    }
+    if (isNotEmpty(this.moduleVersionSec)) {
+      count++;
+    }
+    if (isNotEmpty(this.moduleVersionMBusDriverActive)) {
+      count++;
+    }
+    return count;
+  }
+
+  private boolean isNotEmpty(final String text) {
+    return text != null && !text.isEmpty();
+  }
+}
