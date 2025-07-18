@@ -15,7 +15,7 @@ SPDX-License-Identifier: Apache-2.0
   <description>DTO module.</description>
 
   <groupId>org.opensmartgridplatform</groupId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <url>${maven.site.url}</url>
   <organization>
@@ -42,7 +42,7 @@ SPDX-License-Identifier: Apache-2.0
   <distributionManagement>
     <repository>
       <id>github</id>
-      <url>https://maven.pkg.github.com/osgp/open-smart-grid-platform</url>
+      <url>https://maven.pkg.github.com/osgp/osgp-dto</url>
     </repository>
   </distributionManagement>
 
