@@ -26,7 +26,6 @@ jobs:
         run: mvn -T1C clean install
       - name: Publish Maven artifacts
         run: mvn deploy --settings .github/settings.xml
-        if: contains(github.ref, 'release') || contains(github.ref, 'development')
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
